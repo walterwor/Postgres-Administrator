@@ -1,0 +1,57 @@
+Postgres Administrator Version 1.0 Release.
+
+===== Abstract =====
+
+Español=============
+La administracion de redes por medio de SNMP se realiza utilizando una comunicacion
+UDP entre el administrador y el agente quien reside permanentemente en el dispositivo
+administrado. El agente es quien responde a las solicitudes del administrador. 
+Ante la ocurrencia de algun evento inesperado, una trampa es enviada desde el agente
+al administrador.
+
+SNMP (Protocolo Simple de Administracion de red) es un protocolo que permite 
+supervisar dispositivos conectados a una red. Existen tres vesiones, SNMPv1, 
+SNMPv2 y SNMPv3.
+
+La base de información de administración (MIB) puede pensarse como una base de datos 
+de objetos administrados que el agente rastrea. Cualquier tipo de estado o información 
+estática que pueda accederse a través del NMS está definida en una MIB. 
+
+Las cadenas de comunidad son meras contraseñas que se definen en los agentes y permiten 
+obtener tres tipos de acceso, estos son: solo lectura, lectura-escritura y trampa.
+
+Ingles=============
+
+
+Network management by SNMP is realized by the UDP communication between 
+a manager and the agent who resides in the apparatus for management 
+permanently. An agent returns a response to the request from a manager.
+when special phenomena apparatus rebooted occur, a trap is sent to a 
+manager from an agent.
+
+SNMP (Simple Network Management Protocol) is a protocol for supervising 
+the apparatus connected to the network via a network.
+The version 1 of SNMP is defined by RFC1157 and the version 2 is carried
+out by RFC1441. 
+
+
+MIB (Management Information Base) is the database of the management 
+information about the network apparatus which exists in the network 
+apparatus corresponding to SNMP. The thing of each management information 
+stored in MIB is called object (Object).OID (Object IDentifier),it is the
+discernment child rejected in order to distinguish each object,and is also
+called an object discernment child. the object is managed by the tree 
+structure.
+
+Community name is the exchange between a manager and an agent, and has a 
+role like a password. That is, if the right community name is not specified 
+when publishing a request from a manager to an agent, in an agent side,
+it will be interpreted as unlawful access.
+
+========Postgres Administrator==========
+
+Instalacion:
+Instalador se ecargara de hacerlo todo por ud. Basta con:
+1.Ejecutar setup.
+2.Seleccione la ubicacion en la cual desea instalarlo.
+3.El instalador comenzara la intalacion de postgres administrator en su ordenador.
