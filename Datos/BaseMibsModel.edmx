@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="rdbmsMibModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="rdbmsMibModelStoreContainer">
+          <EntitySet Name="Mibs" EntityType="rdbmsMibModel.Store.Mibs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Objetos" EntityType="rdbmsMibModel.Store.Objetos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Objetos_Mibs" Association="rdbmsMibModel.Store.FK_Objetos_Mibs">
+            <End Role="Mibs" EntitySet="Mibs" />
+            <End Role="Objetos" EntitySet="Objetos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Mibs">
+          <Key>
+            <PropertyRef Name="IdentificadorMib" />
+          </Key>
+          <Property Name="IdentificadorMib" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PathHumano" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Objetos">
+          <Key>
+            <PropertyRef Name="IdentificadorObjeto" />
+          </Key>
+          <Property Name="IdentificadorObjeto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sintaxis" Type="nvarchar(max)" />
+          <Property Name="Acceso" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdentificadorMib" Type="int" Nullable="false" />
+          <Property Name="IdObjPadre" Type="nvarchar(max)" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Objetos_Mibs">
+          <End Role="Mibs" Type="rdbmsMibModel.Store.Mibs" Multiplicity="1" />
+          <End Role="Objetos" Type="rdbmsMibModel.Store.Objetos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mibs">
+              <PropertyRef Name="IdentificadorMib" />
+            </Principal>
+            <Dependent Role="Objetos">
+              <PropertyRef Name="IdentificadorMib" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rdbmsMibModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="rdbmsMibEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mibs" EntityType="rdbmsMibModel.Mibs" />
+          <EntitySet Name="Objetos" EntityType="rdbmsMibModel.Objetos" />
+          <AssociationSet Name="FK_Objetos_Mibs" Association="rdbmsMibModel.FK_Objetos_Mibs">
+            <End Role="Mibs" EntitySet="Mibs" />
+            <End Role="Objetos" EntitySet="Objetos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Mibs">
+          <Key>
+            <PropertyRef Name="IdentificadorMib" />
+          </Key>
+          <Property Name="IdentificadorMib" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PathHumano" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IdObj" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Objetos" Relationship="rdbmsMibModel.FK_Objetos_Mibs" FromRole="Mibs" ToRole="Objetos" />
+        </EntityType>
+        <EntityType Name="Objetos">
+          <Key>
+            <PropertyRef Name="IdentificadorObjeto" />
+          </Key>
+          <Property Name="IdentificadorObjeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdObj" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Sintaxis" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Acceso" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IdentificadorMib" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Mibs" Relationship="rdbmsMibModel.FK_Objetos_Mibs" FromRole="Objetos" ToRole="Mibs" />
+          <Property Type="String" Name="IdObjPadre" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Objetos_Mibs">
+          <End Role="Mibs" Type="rdbmsMibModel.Mibs" Multiplicity="1" />
+          <End Role="Objetos" Type="rdbmsMibModel.Objetos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mibs">
+              <PropertyRef Name="IdentificadorMib" />
+            </Principal>
+            <Dependent Role="Objetos">
+              <PropertyRef Name="IdentificadorMib" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rdbmsMibModelStoreContainer" CdmEntityContainer="rdbmsMibEntities">
+          <EntitySetMapping Name="Mibs"><EntityTypeMapping TypeName="rdbmsMibModel.Mibs"><MappingFragment StoreEntitySet="Mibs">
+            <ScalarProperty Name="IdentificadorMib" ColumnName="IdentificadorMib" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="PathHumano" ColumnName="PathHumano" />
+            <ScalarProperty Name="IdObj" ColumnName="IdObj" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Objetos"><EntityTypeMapping TypeName="rdbmsMibModel.Objetos"><MappingFragment StoreEntitySet="Objetos">
+            <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdObjPadre" ColumnName="IdObjPadre" />
+                <ScalarProperty Name="IdentificadorObjeto" ColumnName="IdentificadorObjeto" />
+            <ScalarProperty Name="IdObj" ColumnName="IdObj" />
+            <ScalarProperty Name="Sintaxis" ColumnName="Sintaxis" />
+            <ScalarProperty Name="Acceso" ColumnName="Acceso" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+            <ScalarProperty Name="IdentificadorMib" ColumnName="IdentificadorMib" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="BaseMibsModel">
+        <EntityTypeShape EntityType="rdbmsMibModel.Mibs" Width="1.5" PointX="0.75" PointY="1.25" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="rdbmsMibModel.Objetos" Width="1.5" PointX="3" PointY="1" Height="2.5571907552083326" IsExpanded="true" />
+        <AssociationConnector Association="rdbmsMibModel.FK_Objetos_Mibs" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.2401432291666667" />
+          <ConnectorPoint PointX="3" PointY="2.2401432291666667" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

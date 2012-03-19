@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RdmsMibModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RdmsMibModelStoreContainer">
+    <EntitySet Name="MibSet" EntityType="RdmsMibModel.Store.MibSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjetoSet" EntityType="RdmsMibModel.Store.ObjetoSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MibObjetos" Association="RdmsMibModel.Store.FK_MibObjetos">
+      <End Role="MibSet" EntitySet="MibSet" />
+      <End Role="ObjetoSet" EntitySet="ObjetoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MibSet">
+    <Key>
+      <PropertyRef Name="IdMib" />
+    </Key>
+    <Property Name="IdMib" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PathHumano" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObjetoSet">
+    <Key>
+      <PropertyRef Name="IdOnbjeto" />
+    </Key>
+    <Property Name="IdOnbjeto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sintaxis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Acceso" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MibIdMib" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_MibObjetos">
+    <End Role="MibSet" Type="RdmsMibModel.Store.MibSet" Multiplicity="1" />
+    <End Role="ObjetoSet" Type="RdmsMibModel.Store.ObjetoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MibSet">
+        <PropertyRef Name="IdMib" />
+      </Principal>
+      <Dependent Role="ObjetoSet">
+        <PropertyRef Name="MibIdMib" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,16 @@
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Negocios.dll
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Negocios.pdb
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Negocios.xml
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\ResolveAssemblyReference.cache
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\Negocios.Resources.resources
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\GenerateResource.read.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\GenerateResource.write.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\Negocios.dll
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\Negocios.xml
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\obj\Debug\Negocios.pdb
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Datos.dll
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Entidades.dll
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Datos.pdb
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Datos.xml
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Entidades.pdb
+D:\ProyectosSNMP\AdmSnmpSln\Negocios\bin\Debug\Entidades.xml

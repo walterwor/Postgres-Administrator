@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetResult" targetNamespace="http://tempuri.org/DataSetResult.xsd" xmlns:mstns="http://tempuri.org/DataSetResult.xsd" xmlns="http://tempuri.org/DataSetResult.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetResult" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetResult" msprop:Generator_UserDSName="DataSetResult">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TResultados" msprop:Generator_TableClassName="TResultadosDataTable" msprop:Generator_TableVarName="tableTResultados" msprop:Generator_TablePropName="TResultados" msprop:Generator_RowDeletingName="TResultadosRowDeleting" msprop:Generator_UserTableName="TResultados" msprop:Generator_RowChangingName="TResultadosRowChanging" msprop:Generator_RowEvHandlerName="TResultadosRowChangeEventHandler" msprop:Generator_RowDeletedName="TResultadosRowDeleted" msprop:Generator_RowEvArgName="TResultadosRowChangeEvent" msprop:Generator_RowChangedName="TResultadosRowChanged" msprop:Generator_RowClassName="TResultadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdResultado" msprop:Generator_ColumnVarNameInTable="columnIdResultado" msprop:Generator_ColumnPropNameInRow="IdResultado" msprop:Generator_ColumnPropNameInTable="IdResultadoColumn" msprop:Generator_UserColumnName="IdResultado" type="xs:int" />
+              <xs:element name="Resultado" msprop:Generator_ColumnVarNameInTable="columnResultado" msprop:Generator_ColumnPropNameInRow="Resultado" msprop:Generator_ColumnPropNameInTable="ResultadoColumn" msprop:Generator_UserColumnName="Resultado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="TResultadosKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TResultados" />
+      <xs:field xpath="mstns:IdResultado" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

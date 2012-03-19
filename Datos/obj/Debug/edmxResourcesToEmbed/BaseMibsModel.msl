@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rdbmsMibModelStoreContainer" CdmEntityContainer="rdbmsMibEntities">
+    <EntitySetMapping Name="Mibs">
+      <EntityTypeMapping TypeName="rdbmsMibModel.Mibs">
+        <MappingFragment StoreEntitySet="Mibs">
+          <ScalarProperty Name="IdentificadorMib" ColumnName="IdentificadorMib" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PathHumano" ColumnName="PathHumano" />
+          <ScalarProperty Name="IdObj" ColumnName="IdObj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objetos">
+      <EntityTypeMapping TypeName="rdbmsMibModel.Objetos">
+        <MappingFragment StoreEntitySet="Objetos">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdObjPadre" ColumnName="IdObjPadre" />
+          <ScalarProperty Name="IdentificadorObjeto" ColumnName="IdentificadorObjeto" />
+          <ScalarProperty Name="IdObj" ColumnName="IdObj" />
+          <ScalarProperty Name="Sintaxis" ColumnName="Sintaxis" />
+          <ScalarProperty Name="Acceso" ColumnName="Acceso" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdentificadorMib" ColumnName="IdentificadorMib" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

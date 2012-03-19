@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RdmsMibModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="RdmsMibModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MibSet" EntityType="RdmsMibModel.MibSet" />
+    <EntitySet Name="ObjetoSet" EntityType="RdmsMibModel.ObjetoSet" />
+    <AssociationSet Name="FK_MibObjetos" Association="RdmsMibModel.FK_MibObjetos">
+      <End Role="MibSet" EntitySet="MibSet" />
+      <End Role="ObjetoSet" EntitySet="ObjetoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MibSet">
+    <Key>
+      <PropertyRef Name="IdMib" />
+    </Key>
+    <Property Type="Int32" Name="IdMib" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PathHumano" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IdObj" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ObjetoSet" Relationship="RdmsMibModel.FK_MibObjetos" FromRole="MibSet" ToRole="ObjetoSet" />
+  </EntityType>
+  <EntityType Name="ObjetoSet">
+    <Key>
+      <PropertyRef Name="IdOnbjeto" />
+    </Key>
+    <Property Type="Int32" Name="IdOnbjeto" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="IdObj" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sintaxis" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Acceso" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="MibIdMib" Nullable="false" />
+    <NavigationProperty Name="MibSet" Relationship="RdmsMibModel.FK_MibObjetos" FromRole="ObjetoSet" ToRole="MibSet" />
+  </EntityType>
+  <Association Name="FK_MibObjetos">
+    <End Type="RdmsMibModel.MibSet" Role="MibSet" Multiplicity="1" />
+    <End Type="RdmsMibModel.ObjetoSet" Role="ObjetoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MibSet">
+        <PropertyRef Name="IdMib" />
+      </Principal>
+      <Dependent Role="ObjetoSet">
+        <PropertyRef Name="MibIdMib" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

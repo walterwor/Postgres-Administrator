@@ -1,0 +1,10 @@
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\bin\Debug\Entidades.dll
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\bin\Debug\Entidades.pdb
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\bin\Debug\Entidades.xml
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\ResolveAssemblyReference.cache
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\Entidades.Resources.resources
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\GenerateResource.read.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\GenerateResource.write.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\Entidades.dll
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\Entidades.xml
+D:\ProyectosSNMP\AdmSnmpSln\Entidades\obj\Debug\Entidades.pdb
