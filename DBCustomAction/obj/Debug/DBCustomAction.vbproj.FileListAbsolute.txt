@@ -1,0 +1,11 @@
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\bin\Debug\DBCustomAction.dll.config
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\bin\Debug\DBCustomAction.dll
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\bin\Debug\DBCustomAction.pdb
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\bin\Debug\DBCustomAction.xml
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\ResolveAssemblyReference.cache
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\DBCustomAction.Resources.resources
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\GenerateResource.read.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\GenerateResource.write.1.tlog
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\DBCustomAction.dll
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\DBCustomAction.xml
+D:\ProyectosSNMP\AdmSnmpSln\DBCustomAction\obj\Debug\DBCustomAction.pdb

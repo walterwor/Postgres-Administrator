@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rdbmsMibModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="rdbmsMibModelStoreContainer">
+    <EntitySet Name="Mibs" EntityType="rdbmsMibModel.Store.Mibs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Objetos" EntityType="rdbmsMibModel.Store.Objetos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MibObjetos" Association="rdbmsMibModel.Store.FK_MibObjetos">
+      <End Role="Mibs" EntitySet="Mibs" />
+      <End Role="Objetos" EntitySet="Objetos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Mibs">
+    <Key>
+      <PropertyRef Name="IdMib" />
+    </Key>
+    <Property Name="IdMib" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PathHumano" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Objetos">
+    <Key>
+      <PropertyRef Name="IdObjeto" />
+    </Key>
+    <Property Name="IdObjeto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IdObj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sintaxis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Acceso" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MibIdMib" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_MibObjetos">
+    <End Role="Mibs" Type="rdbmsMibModel.Store.Mibs" Multiplicity="1" />
+    <End Role="Objetos" Type="rdbmsMibModel.Store.Objetos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mibs">
+        <PropertyRef Name="IdMib" />
+      </Principal>
+      <Dependent Role="Objetos">
+        <PropertyRef Name="MibIdMib" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
